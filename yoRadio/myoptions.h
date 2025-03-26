@@ -31,7 +31,7 @@ The connection tables are located here https://github.com/e2002/yoradio#connecti
                for ESP32-S3 see ESP32-S3 Pin Reference http://wiki.fluidnc.com/en/hardware/ESP32-S3_Pin_Reference*/
 
 #define TFT_CS            5                 /*  SPI CS pin  */
-#define TFT_RST           15                /*  SPI RST pin.  set to -1 and connect to Esp EN pin */
+#define TFT_RST           -1                /*  SPI RST pin.  set to -1 and connect to Esp EN pin */
 #define TFT_DC            4                 /*  SPI DC/RS pin  */
 /*  HSPI PINS. SCL(SCK, CLK) must be connected to pin 14
                SDA(MOSI, DIN, SDI) must be connected to pin 13  */
@@ -48,9 +48,9 @@ The connection tables are located here https://github.com/e2002/yoradio#connecti
 //#define I2C_RST           -1                /*  I2C RST pin. Set to -1 if not used  */
 
 /*        I2S DAC                 */
-//#define I2S_DOUT          27                /*  DIN connection. Should be set to 255 if the board is not used */
-//#define I2S_BCLK          26                /*  BCLK Bit clock */
-//#define I2S_LRC           25                /*  WSEL Left Right Clock */
+#define I2S_DOUT          27                /*  DIN connection. Should be set to 255 if the board is not used */
+#define I2S_BCLK          26                /*  BCLK Bit clock */
+#define I2S_LRC           25                /*  WSEL Left Right Clock */
 /******************************************/
 
 /*  VS1053 VSPI PINS. VS1053 SCK must be connected to pin 18
@@ -67,11 +67,11 @@ The connection tables are located here https://github.com/e2002/yoradio#connecti
 /******************************************/
 
 /*  ENCODER  */
-//#define ENC_BTNL              35         /*  Left rotation */
-//#define ENC_BTNB              32           /*  Encoder button */
-//#define ENC_BTNR              33           /*  Right rotation */
-//#define ENC_INTERNALPULLUP    true          /*  Enable the weak pull up resistors */
-//#define ENC_HALFQUARD         false          /*  Experiment  with it */
+#define ENC_BTNL              34         /*  Left rotation */
+#define ENC_BTNB              39           /*  Encoder button */
+#define ENC_BTNR              36           /*  Right rotation */
+#define ENC_INTERNALPULLUP    true          /*  Enable the weak pull up resistors */
+#define ENC_HALFQUARD         false          /*  Experiment  with it */
 /******************************************/
 
 /*  SDCARD  */
@@ -91,9 +91,9 @@ The connection tables are located here https://github.com/e2002/yoradio#connecti
 //#define RTC_SCL               255						 /*	RTC_SCL	*/
 
 /*  ENCODER2  */
-#define ENC2_BTNL              35           /*  Left rotation */
+#define ENC2_BTNL              33           /*  Left rotation */
 #define ENC2_BTNB              32           /*  Encoder button */
-#define ENC2_BTNR              34           /*  Right rotation */
+#define ENC2_BTNR              35           /*  Right rotation */
 #define ENC2_INTERNALPULLUP    true          /*  Enable the weak pull up resistors */
 #define ENC2_HALFQUARD         false         /*  (true, false, 255) Experiment  with it */
 /******************************************/
@@ -129,7 +129,7 @@ The connection tables are located here https://github.com/e2002/yoradio#connecti
                   DIN must be connected to pin 23
                   DO  must be connected to pin 19
                   IRQ - not connected */
-#define TS_CS                 33           /*  Touch screen CS pin  */
+#define TS_CS                 15           /*  Touch screen CS pin  */
 /*  TS HSPI PINS. CLK must be connected to pin 14
                   DIN must be connected to pin 13
                   DO  must be connected to pin 12
@@ -157,7 +157,7 @@ The connection tables are located here https://github.com/e2002/yoradio#connecti
 //#define BRIGHTNESS_PIN    255               /*  Pin for adjusting the brightness of the display (output 0 - 3v3) */
 //#define PLAYER_FORCE_MONO false             /*  mono option on boot - false stereo, true mono  */
 //#define I2S_INTERNAL      false             /*  If true - use esp32 internal DAC  */
-//#define ROTATE_90         false             /*  Optional 90 degree rotation for square displays */
+//#define ROTATE_90         true             /*  Optional 90 degree rotation for square displays */
 //#define WAKE_PIN          255               /*  Wake Pin (for manual wakeup from sleep mode. can match with BTN_XXXX, ENC_BTNB, ENC2_BTNB.  must be one of: 0,2,4,12,13,14,15,25,26,27,32,33,34,35,36,39) */
                                               /*  For sample #define ENC_BTNB 36 - next line - #define WAKE_PIN ENC_BTNB  */
 //#define LIGHT_SENSOR      255               /*  Light sensor  */

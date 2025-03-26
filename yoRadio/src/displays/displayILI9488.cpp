@@ -33,6 +33,7 @@ void DspCore::initDisplay() {
   fillScreen(0x0000);
   invert();
   flip();
+  setRotation(3);
   
   plItemHeight = playlistConf.widget.textsize*(CHARHEIGHT-1)+playlistConf.widget.textsize*4;
   plTtemsCount = round((float)height()/plItemHeight);
